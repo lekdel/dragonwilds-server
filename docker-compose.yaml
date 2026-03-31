@@ -1,0 +1,11 @@
+services:
+  dragonwilds:
+    build: .
+    container_name: dragonwilds
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "7777:7777/udp"
+    volumes:
+      - ./data/server:/opt/dragonwilds
